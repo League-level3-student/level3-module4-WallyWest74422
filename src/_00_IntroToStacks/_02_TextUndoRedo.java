@@ -1,8 +1,10 @@
 package _00_IntroToStacks;
 
+import java.awt.Component;
 import java.awt.GraphicsConfiguration;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.Stack;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,7 +14,10 @@ public class _02_TextUndoRedo implements KeyListener {
 	public static void main(String[] args) {
 		_02_TextUndoRedo text = new _02_TextUndoRedo();
 	text.setup();
+	text.text();
 	}
+	JLabel label = new JLabel();
+	Stack<Character> stack = new Stack<Character>();
     /* 
      * Create a JFrame with a JPanel and a JLabel.
      * 
@@ -28,19 +33,24 @@ public class _02_TextUndoRedo implements KeyListener {
      * pressed, the top Character is popped  off the Stack and added back to
      * the JLabel.
      */
-	void setup() {
+
+ void setup() {
 JFrame frame = new JFrame();
 frame.setSize(500, 500);
 	frame.setVisible(true);
 JPanel panel = new JPanel();
 
-JLabel label = new JLabel();
 panel.add(label);
 frame.add(panel);
 	
-panel.addKeyListener(this);
+frame.addKeyListener(this);
+
 }
 
+ void text(){
+
+ }
+ 
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -50,14 +60,32 @@ panel.addKeyListener(this);
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-	//	if(e.getSource().equals()) {
-			
-//		}
-	}
+		String text = e.getKeyChar() + "";
+		String existingText = label.getText();
+		
+ label.setText(existingText + text );
+ if(e.getKeyChar()==KeyEvent.VK_BACK_SPACE) {
+	 label.setText(existingText.substring(0, existingText.length() -1));
+	 stack.push(existingText.charAt(existingText.length()-1));
+	 System.out.println(stack);
+	 }
+ 
+ if(e.getKeyChar()==KeyEvent.VK_0) {
+	 Character Undo1 = stack.pop();
+	 String Undo = Undo1.toString();
+	 System.out.println(Undo);
+	 label.setText(existingText+ Undo);
+ }
+ }
+
+
+		
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
+ 
+	
 	}
