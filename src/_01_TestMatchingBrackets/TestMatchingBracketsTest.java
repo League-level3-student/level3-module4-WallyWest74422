@@ -14,7 +14,7 @@ public class TestMatchingBracketsTest {
         assertTrue(TestMatchingBrackets.doBracketsMatch("{}"));
         assertTrue(TestMatchingBrackets.doBracketsMatch("{{}}"));
         assertTrue(TestMatchingBrackets.doBracketsMatch("{}{}{{}}"));
-   //     assertFalse(TestMatchingBrackets.doBracketsMatch("{{}"));
-    //    assertFalse(TestMatchingBrackets.doBracketsMatch("}{"));
+        assertFalse(TestMatchingBrackets.doBracketsMatch("{{}"));
+        assertFalse(TestMatchingBrackets.doBracketsMatch("}{"));
     }
 }
