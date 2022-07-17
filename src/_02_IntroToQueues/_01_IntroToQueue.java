@@ -79,7 +79,7 @@ while(queue.size()<5){
 
         // 7. Loop until there are no more elements in either the Stack or Queue
         //    and all the elements are printed
-        
+        System.out.println(stack.size());
 }
 System.out.println("All Done!");
     }

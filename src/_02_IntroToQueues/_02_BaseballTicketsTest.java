@@ -46,7 +46,7 @@ import org.junit.Test;
  * 
  * Each ticket takes one minutes to emit with no wasted time between purchases.
  * You will be given a queue with all the people queuing and the initial
- * position of your buddy.
+ * position of your buddy.  
  * 
  * Example:
  * queue: [2, 5, 3, 4, 6]
@@ -80,7 +80,7 @@ public class _02_BaseballTicketsTest {
         
         assertEquals(18, _02_BaseballTickets.calculateWaitTime(ticketsQueue, 1));
     }
-    
+   
     @Test
     public void test3() {
         List<Integer> list = Arrays.asList(2, 5, 3, 6, 4); 
