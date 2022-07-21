@@ -9,7 +9,7 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Utilities {
-    public static String readRandomLineFromFile(String filename) {
+    public String readRandomLineFromFile(String filename) {
         String word = "";
 
         try {
@@ -32,7 +32,7 @@ public class Utilities {
         return word;
     }
 
-    public static int getTotalWordsInFile(String filename) {
+    public int getTotalWordsInFile(String filename) {
         int totalLines = 0;
         try {
             BufferedReader br = new BufferedReader(new FileReader(filename));
