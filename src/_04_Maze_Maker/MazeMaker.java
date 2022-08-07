@@ -18,6 +18,12 @@ public class MazeMaker {
         rows = r;
         cols = c;
         maze = new Maze(rows, cols);
+        boolean openWall = false;
+        while(openWall==false) {
+randGen.nextInt(rows);
+randGen.nextInt(cols);
+
+        }
 
         // 1. Pick a random cell along the border and remove its exterior wall.
         //    This will be the starting point. Then select a random cell along
