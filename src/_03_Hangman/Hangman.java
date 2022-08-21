@@ -69,7 +69,7 @@ public class Hangman implements KeyListener {
 
 		regEx = "[a-z]";
 		output = word.replaceAll(regEx, "_");
-		System.out.println(word);
+	//	System.out.println(word);
 		builder.append(output);
 		label.setText(output);
 
@@ -122,7 +122,7 @@ public class Hangman implements KeyListener {
 							builder = new StringBuilder();
 							builder.append(output);
 							label.setText(output);
-							System.out.println(word);
+	//						System.out.println(word);
 						}
 				
 			
