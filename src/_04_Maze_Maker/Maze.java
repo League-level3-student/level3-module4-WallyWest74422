@@ -16,9 +16,9 @@ public class Maze {
 cells = new Cell[rows][cols];
         // 3. Iterate through each cell and initialize it
         //    using row and col as the cell location
-for(int i = 0; i < cells.length; i++) {
+for(int i = 0; i < rows; i++) {
 	
-    for(int j = 0; j < cells[i].length; j++) {
+    for(int j = 0; j < cols; j++) {
           cells[i][j] = new Cell(i, j);
     }
 }
@@ -27,12 +27,19 @@ for(int i = 0; i < cells.length; i++) {
 
     // 4. This method iterates through the cells and draws them
     public void draw(Graphics g) {
+    	for(int i = 0; i < rows; i++) {
+    		
+    	    for(int j = 0; j < cols; j++) {
+    	          cells[i][j].draw(g);
+    	    }
+    	}
 
     }
 
     // 5. This method returns the selected cell
     public Cell getCell(int row, int col){
-        return  null;
+ 
+       return cells[row][col];
     }
 
     public int getRows() {
